@@ -1,0 +1,245 @@
+#include <stdio.h>
+
+
+int main (){
+
+int torre,rainha,cavalo,escolha,movimento=1,i;
+int bispo =1;
+
+
+printf("=====JOGO DE XADREZ=====\n");
+
+
+
+
+
+
+// mover a torre 5 casas para direita
+printf("Digite para qual lado voce quer mover a sua torre\n");
+printf(" 1 para direita\n");
+printf(" 2 para esquerda\n");
+printf(" 0 Sair\n");
+scanf("%d", &escolha);
+
+// saindo do programa
+if(escolha ==0){
+
+        printf ("Sindo....\n");
+
+        return 0;
+}
+
+for (torre = 0; torre < 5; torre++ )
+switch (escolha)
+{
+case 1:
+    printf ("para frente\n");
+    break;
+
+case 2:
+    printf ("para tras\n");
+    break;    
+// opcao invalida e parando o loop
+default:
+printf ("opcao invalida\n");
+torre = 6;
+    break;
+}
+// movendo o bispo
+printf("Digite para qual lado voce quer mover o seu Bispo\n");
+printf(" 1 para cima e para direita\n");
+printf(" 2 Para baixo e para baixo e para direita\n");
+printf(" 3 para cima e para cima e para esquerda\n");
+printf(" 4 Para baixo e para cima e para direita\n");
+printf("0 Sair\n");
+scanf("%d", &escolha);
+// saindo do programa
+if(escolha ==0){
+
+        printf ("Sindo....\n");
+
+        return 0;
+}
+while (bispo <=5)
+{
+   
+
+
+
+switch (escolha)
+{
+case 1:
+    printf ("para cima e para Direita\n");
+
+    break;
+
+case 2:
+    printf ("para baixo e para dreita\n");
+  
+    break;    
+
+case 3:
+    printf ("para cima e para  esuqerda \n");
+  
+    break;     
+case 4:
+    printf ("para cima e para esquerda \n");
+  
+    break;     
+
+break;
+// oopcao invalida, e parando o loop
+default:
+printf("Opcao Invalida\n");
+bispo = 6;
+    break;
+}
+  bispo++;
+
+}
+
+//movendo a rainha para todos os lados
+ printf("Digite para qual lado voce quer mover a sua rainha\n");
+
+printf(" 1 na diagonal para cima e para direita\n");
+printf(" 2 na diagonal  para baixo e para direita\n");
+printf(" 3 na diagonal  e para cima e para esquerda\n");
+printf(" 4 na diagonal Para baixo e para cima e para direita\n");
+printf(" 5 na horizontal Para direita\n");
+printf(" 6 na horizontal Para esquerda\n");
+printf(" 7 para frente\n");
+printf(" 8 para tras\n");
+printf("0 Sair\n");
+scanf("%d", &escolha);
+rainha=1;
+// saindo do programa
+if(escolha ==0){
+
+        printf ("Sindo....\n");
+
+        return 0;
+}
+do {
+        switch (escolha)
+    {
+    case 1: 
+   printf(" na diagonal para cima e para direita\n");
+        break;
+     case 2:
+     printf("  na diagonal  para baixo e para direita\n");
+        break;
+     case 3:
+     printf("  na diagonal  e para cima e para esquerda\n");
+        break;
+     case 4: 
+     printf("  na diagonal  e para baixo e para esquerda\n");
+        break;
+     case 5: 
+     printf(" na horizontal Para direita\n");
+        break;
+     case 6:
+     printf("  na horizontal Para esquerda\n");
+        break;
+     case 7: 
+     printf("  para frente\n");
+        break;
+
+     case 8: 
+     printf("  para tras\n");
+    break;
+    // opcao invalida e parando o loop
+    default:
+    printf("Opcao invalida\n");
+    rainha = 6;
+
+    break;
+
+
+   
+    } 
+       rainha++;
+    }
+ 
+
+// o lop ira printar na tela 4 vezes 
+while (rainha <=5);
+
+// MOVIMENTANDO O CAVALO USANDO LOOP ALINHADO
+ printf("Digite para qual lado voce quer mover seu cavalo\n");
+printf(" 1 para cima e para direita\n");
+printf(" 2 para cuima e para esquerda\n");
+printf(" 3 para baixo e para direita\n");
+printf(" 4 para baixo e para esquerda\n");
+scanf("%d", &escolha);
+
+switch (escolha)
+{
+case 1:
+// O LOOP WHILE ESTA DECREMENTANDO PARA PRINTAR NA TELA UMA UNICA FEZ DIREITA, ELE ESTA SENDO INICIALIZADO COM 1 NO  ESCOPO
+   while ( movimento-- )
+      {
+
+        // LAÇ0 PARA IMPRIMIR O O MOVIMENTO DUAS VEZES 
+    for (int i =0; i < 2; i++ )
+      {
+        printf("Cima\n");
+
+      } 
+        printf ("Direita\n");
+   }
+   
+    break;
+case 2:
+
+   while ( movimento-- )
+   break;
+      {
+    for (int i =0; i < 2; i++ )
+      {
+        printf("Cima\n");
+
+      } 
+        printf ("Esquerda\n");
+   }
+
+      break;
+
+   case 3:
+
+   while ( movimento-- )
+   break;
+      {
+    for (int i =0; i < 2; i++ )
+      {
+        printf("Baixo\n");
+
+      } 
+        printf ("Direita\n");
+   }
+   case 4:
+
+   while ( movimento-- )
+   break;
+      {
+    for (int i =01; i < 2; i++ )
+      {
+        printf("Baixo\n");
+
+      } 
+        printf ("Esquerda\n");
+   }
+    break;
+default:
+     // ENCERRANDO O LAÇ0 
+    printf ("Opcao invalida\n");
+    i = 0;
+    break;
+}
+
+
+
+return 0;
+
+
+}
+
