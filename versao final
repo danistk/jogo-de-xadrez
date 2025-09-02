@@ -1,0 +1,101 @@
+#include <stdio.h>
+
+// ==================== Funções Recursivas ====================
+
+void moverTorre(int casas) {
+    if (casas == 0) return;
+    printf("Direita\n");
+    moverTorre(casas - 1);
+}
+
+void moverRainha(int casas) {
+    if (casas == 0) return;
+    printf("Diagonal: Cima\n");
+    printf("Diagonal: Direita\n");
+    moverRainha(casas - 1);
+}
+
+void moverBispo(int linhas, int colunas) {
+    if (linhas == 0) return;
+    for (int i = 0; i < colunas; i++) {
+        printf("Cima\n");
+        printf("Direita\n");
+    }
+    moverBispo(linhas - 1, colunas);
+}
+
+// ==================== Loops aninhados para Cavalo ====================
+
+void moverCavalo() {
+    // Simulando 4 tipos de movimento em L
+
+    // Cima x2 + Direita
+    for (int i = 0; i < 2; i++) printf("Cima\n");
+    printf("Direita\n");
+
+    // Baixo x2 + Esquerda
+    for (int i = 0; i < 2; i++) printf("Baixo\n");
+    printf("Esquerda\n");
+
+    // Cima x2 + Esquerda
+    for (int i = 0; i < 2; i++) printf("Cima\n");
+    printf("Esquerda\n");
+
+    // Baixo x2 + Direita
+    for (int i = 0; i < 2; i++) printf("Baixo\n");
+    printf("Direita\n");
+}
+
+// ==================== Main ====================
+
+int main() {
+    int escolha;
+    int casas = 4;  // número de movimentos para peças com recursão
+
+    printf("===== JOGO DE XADREZ  =====\n\n");
+
+    printf("Escolha a peça que deseja mover:\n");
+    printf("1 - Torre\n");
+    printf("2 - Bispo \n");
+    printf("3 - Rainha \n");
+    printf("4 - Cavalo \n");
+    printf("0 - Sair\n\n");
+    printf("Digite sua opção: ");
+    scanf("%d", &escolha);
+
+    printf("\n");
+
+    switch (escolha) {
+        case 1:
+            printf(">>> Movimento da TORRE:\n");
+            moverTorre(casas);
+            break;
+
+        case 2:
+            printf(">>> Movimento do BISPO:\n");
+            moverBispo(2, 2);  // 2 linhas, 2 colunas
+            break;
+
+        case 3:
+            printf(">>> Movimento da RAINHA:\n");
+            moverRainha(casas);
+            break;
+
+        case 4:
+            printf(">>> Movimento do CAVALO:\n");
+            moverCavalo();
+            break;
+
+        case 0:
+            printf("Saindo do jogo...\n");
+            return 0;
+
+        default:
+            printf("Opção inválida!\n");
+            break;
+    }
+
+    printf("\n===== FIM DO PROGRAMA =====\n");
+
+    return 0;
+}
